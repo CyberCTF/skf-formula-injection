@@ -4,11 +4,5 @@
   "question": "Add a page whose content becomes a live formula when an administrator opens the exported spreadsheet (formula injection).",
   "category": "WEB",
   "difficulty": 1,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "formula-injection",
-    "csv-injection",
-    "spreadsheet",
-    "injection"
-  ]
+  "evidence_kind": "SECRET"
 }
