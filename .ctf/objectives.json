@@ -1,0 +1,44 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Plant a formula in the export and retrieve the flag (/ctf/flag).",
+      "check": {
+        "evidence": "SECRET",
+        "format": "FLAG{%s}"
+      },
+      "dev": "FLAG{dev-skf-formula-injection}",
+      "hints": [
+        "Exported cell values are not neutralized.",
+        "Read about CSV or spreadsheet formula injection."
+      ],
+      "steps": [
+        {
+          "key": "char",
+          "title": "Find the trigger",
+          "prompt": "With which character does a spreadsheet cell formula start?",
+          "check": {
+            "answer": [
+              "=",
+              "equals",
+              "equal sign"
+            ]
+          }
+        },
+        {
+          "key": "class",
+          "title": "Name the weakness",
+          "prompt": "What class of vulnerability is this?",
+          "check": {
+            "answer": [
+              "formula injection",
+              "csv injection",
+              "spreadsheet injection"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

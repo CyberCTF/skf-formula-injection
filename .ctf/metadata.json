@@ -1,7 +1,7 @@
 {
   "title": "OWASP SKF Formula Injection",
   "description": "A Flask application where anyone can add pages (title and content) and export all pages as a spreadsheet. Cell values starting with = are exported as is.",
-  "question": "Add a page whose content becomes a live formula when an administrator opens the exported spreadsheet (formula injection).",
+  "question": "Add a page whose content becomes a live formula in the exported spreadsheet (formula injection). The flag is in /ctf/flag; client-side lab.",
   "category": "WEB",
   "difficulty": 1,
   "evidence_kind": "SECRET"

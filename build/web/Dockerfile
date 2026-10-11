@@ -3,6 +3,7 @@
 # - pip installs requirements.txt with constraints.txt (Flask-Excel and the pyexcel packages pinned
 #   to their versions of 2022-01-24) and adds pyexcel-xls: without that plug-in the lab's own
 #   /pages/export answers 500 (OSError: No content, file name. Nothing is given).
+# - it creates /ctf owned by the lab user, for the per-player flag.
 
 ### Static layers
 
@@ -28,6 +29,9 @@ WORKDIR /home/app/Formula-injection
 RUN chown -R app:app /home/app/Formula-injection
 
 # Switching to the limited user
+# Overlay: the flag folder /ctf, owned by the lab user so the flag init (which runs as that user) can write it.
+RUN mkdir -p /ctf && chown app:app /ctf
+
 USER app
 
 # Installing needed binaries and deps
